@@ -10,7 +10,7 @@ Pour en savoir plus, je vous invite à utiliser la commande `leon!help`.
 
 ## J'ai un problème... / J'aimerais une commande qui fait...
 Malheureusement, le bot n'est pas parfait, et parfois, c'est le drame...
-Pas de panique ! Si vous rencontrez un problème avec le bot, ou que vous aimeriez voir une nouvelle commande, vous êtes fortement encouragés à faire [nouvelle issue !](https://github.com/beltzawoo/leonify-bot/issues/new)
+Pas de panique ! Si vous rencontrez un problème avec le bot, ou que vous aimeriez voir une nouvelle commande, vous êtes fortement encouragés à faire [une nouvelle issue !](https://github.com/beltzawoo/leonify-bot/issues/new)
 Décrivez simplement votre problème, et on viendra sûrement voir ça. No panic. :^)
 
 ## Je veux aider !
