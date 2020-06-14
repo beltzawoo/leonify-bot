@@ -29,8 +29,8 @@ async def on_message(message):
 
     if message.author == client.user:
         return
-
-    if message.content.startswith(prefix + 'help'):
+    lowermessage = message.content.lower()
+    if lowermessage.startswith(prefix + 'help'):
         embed = discord.Embed(title="Infos et aide", color=0x0475e4)
         embed.add_field(name="Commandes Fun 🎲",
                         value="""leon!fursona
@@ -48,7 +48,7 @@ leon!embed <texte>""",
         await message.author.send(embed=embed)
         await message.add_reaction("👍")
 
-    if message.content.startswith(prefix + 'gay'):
+    if lowermessage.startswith(prefix + 'gay'):
 
         tested_thing = message.content[8:]
         gay_percentage = str(random.randint(1, 100))
@@ -71,7 +71,7 @@ Pour info, {} est donc {} !""".format(
                 tested_thing, gay_percentage, tested_thing, orientation), color=0xff00ff)
         await message.channel.send(embed=embed)
 
-    if message.content.startswith(prefix + 'fursona'):
+    if lowermessage.startswith(prefix + 'fursona'):
 
         species_list = ["loup", "renard", "chien", "dragon", "chat", "tigre", "lion", "lapin", "raccoon", "putois",
                         "cheval", "loutre", "ours", "coyote", "hyène", "oiseau", "souris", "kangourou", "gryphon",
@@ -111,7 +111,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
                               color=0xb2ff30)
         await message.channel.send(embed=embed)
 
-    if message.content.startswith(prefix + 'choix'):
+    if lowermessage.startswith(prefix + 'choix'):
 
         arguments_only = message.content[11:]
         if "/" not in arguments_only:
@@ -127,7 +127,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
                               color=0x00ff00)
         await message.channel.send(embed=embed)
 
-    if message.content.startswith(prefix + "love"):
+    if lowermessage.startswith(prefix + "love"):
 
         arguments_only = message.content[9:]
         if "/" not in arguments_only:
@@ -143,7 +143,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
                                                                         random.randint(1, 100)), color=0xff00ff)
         await message.channel.send(embed=embed)
 
-    if message.content.startswith(prefix + "purge"):
+    if lowermessage.startswith(prefix + "purge"):
         await message.delete()
         if message.author.permissions_in(message.channel).manage_messages:
             if message.content[11:] == "":
@@ -154,7 +154,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
         else:
             await error_message(message, "Il faut avoir la permission \"Gérer les messages !\"")
 
-    if message.content.startswith(prefix + "embed"):
+    if lowermessage.startswith(prefix + "embed"):
         if message.author.permissions_in(message.channel).manage_messages:
             embed_content = message.content[10:]
             if embed_content == "":
@@ -165,7 +165,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
             await message.delete()
         else:
             await error_message(message, "Il faut avoir la permission \"Gérer les messages !\"")
-    if message.content.startswith(prefix + "info"):
+    if lowermessage.startswith(prefix + "info"):
         embed=discord.Embed(title="Informations", description="Voici des informations sur Leonify !")
         embed.set_thumbnail(url=str(client.user.avatar_url))
         embed.add_field(name="Github :", value="https://github.com/beltzawoo/leonify-bot", inline=False)
