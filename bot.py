@@ -62,7 +62,7 @@ leon!embed <texte>""",
         elif int(gay_percentage) <= 89:
             orientation = "homosexuel"
         else:
-            orientation = "très gay. Mais pshhhh, entre nous, <@179301361840553984> l'est sûrement plus..."
+            orientation = "très gay. Mais pshhhh, entre nous, moins que beltza lol"
 
         embed = discord.Embed(
             title="Est-ce que ce truc est gay ?",
