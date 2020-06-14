@@ -43,11 +43,7 @@ leon!choix <choix1/choix2>""",
 leon!embed <texte>""",
                         inline=False)
         embed.add_field(name="Informations ❓",
-                        value="""Merci beaucoup d'utiliser ce bot !
-Ceci est la nouvelle version du code de Leonify! original, codée avec la dernière version de discord.py.
-Il est maintenant open-source, tout le monde peut contribuer ou suggérer des choses !
-Github : https://github.com/beltzawoo/leonify-bot
-~beltza""",
+                        value="leon!info",
                         inline=False)
         await message.author.send(embed=embed)
         await message.add_reaction("👍")
