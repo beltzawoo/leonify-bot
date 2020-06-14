@@ -43,11 +43,7 @@ leon!choix <choix1/choix2>""",
 leon!embed <texte>""",
                         inline=False)
         embed.add_field(name="Informations ❓",
-                        value="""Merci beaucoup d'utiliser ce bot !
-Ceci est la nouvelle version du code de Leonify! original, codée avec la dernière version de discord.py.
-Il est maintenant open-source, tout le monde peut contribuer ou suggérer des choses !
-Github : https://github.com/beltzawoo/leonify-bot
-~beltza""",
+                        value="leon!info",
                         inline=False)
         await message.author.send(embed=embed)
         await message.add_reaction("👍")
@@ -169,5 +165,16 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
             await message.delete()
         else:
             await error_message(message, "Il faut avoir la permission \"Gérer les messages !\"")
+    if message.content.startswith(prefix + "info"):
+        embed=discord.Embed(title="Informations", description="Voici des informations sur Leonify !")
+        embed.set_thumbnail(url=str(client.user.avatar_url))
+        embed.add_field(name="Github :", value="https://github.com/beltzawoo/leonify-bot", inline=False)
+        AppInfo=await client.application_info()
+        embed.add_field(name="Créateur :", value=AppInfo.owner.name + "#" + AppInfo.owner.discriminator, inline=False)
+        embed.add_field(name="Nombre de Serveurs :", value=len(client.guilds), inline=False)
+        embed.add_field(name="Nombre d'Utilisateurs :", value=len(client.users), inline=False)
+        embed.add_field(name="Invitation :", value="https://discord.com/oauth2/authorize?client_id={}&scope=bot&permissions=268823630".format(AppInfo.id), inline=False)
+        embed.add_field(name="Librairie :", value="discord.py", inline=False)
+        await message.channel.send(embed=embed)
 
 client.run(os.environ.get('BOT_TOKEN'))
