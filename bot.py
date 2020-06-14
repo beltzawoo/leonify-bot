@@ -45,8 +45,11 @@ leon!embed <texte>""",
         embed.add_field(name="Informations ❓",
                         value="leon!info",
                         inline=False)
-        await message.author.send(embed=embed)
-        await message.add_reaction("👍")
+        if "--nodm" in message.content:
+            await message.channel.send(embed=embed)
+        else:
+            await message.author.send(embed=embed)
+            await message.add_reaction("👍")
 
     if message.content.startswith(prefix + 'gay'):
 
