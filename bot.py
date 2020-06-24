@@ -29,6 +29,8 @@ async def on_message(message):
 
     if message.author == client.user:
         return
+    if message.author.bot == True:
+        return
     lowermessage = message.content.lower()
     if lowermessage.startswith(prefix + 'help'):
         embed = discord.Embed(title="Infos et aide", color=0x0475e4)
