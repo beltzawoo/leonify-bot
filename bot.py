@@ -56,6 +56,7 @@ leon!embed <texte>""",
     if lowermessage.startswith(prefix + 'gay'):
 
         tested_thing = message.content[8:]
+        random.seed(tested_thing)
         gay_percentage = str(random.randint(1, 100))
         if tested_thing == "":
             await error_message(message, "Il faut préciser qui ou quoi je dois tester ! :c")
@@ -126,7 +127,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
         reply_list = ["{}, bien sûr !", "Je choisis {} sans hésiter !",
                       "Un peu de doute, mais je pense que {} est mieux !", "C'est une question ? {} bien sûr !"
                       "Je préfère {}, franchement.", "Rien n'est meilleur que {} !" "Team {} ! >w<"]
-
+        random.seed(arguments_only)
         embed = discord.Embed(title="Le choix magique",
                               description=random.choice(reply_list).format(random.choice(split_arguments)),
                               color=0x00ff00)
@@ -143,6 +144,7 @@ J'espère que ça t'aide >w<\"""".format(fur_species, fur_colour, fur_personalit
                       "Hmmmm, {} et {} ? Je vais dire... {}% !",
                       "Laisse moi voir... {} et {} sont compatibles à {}% !",
                       "Après réflexion, il me semble que {} et {} soient compatibles à {}% ! Vwalà ! >w<"]
+        random.seed(arguments_only)
         embed = discord.Embed(title="L'amour est dans l'air... Ou pas",
                                   description=random.choice(reply_list).format(split_arguments[0], split_arguments[1],
                                                                         random.randint(1, 100)), color=0xff00ff)
