@@ -3,7 +3,9 @@ import random
 import asyncio
 import os
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.members = True
+client = discord.Client(intents=intents)
 
 prefix = 'leon!'
 
